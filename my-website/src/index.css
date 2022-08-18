@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background-color: #111;
+  color: #fff;
+  font-family: 'Walter Turncoat';
+}
+#root{
+  min-height:100vh;
+  display:flex;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+
+@layer base {
+  .reenie-beanie{
+    font-family:'Reenie Beanie';
+  }
+  .walter-turncoat{
+    font-family: 'Walter Turncoat';
+  }
+}
