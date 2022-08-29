@@ -15,6 +15,9 @@ module.exports = {
           sm: '15%',
           xs: '20%',
         }
+      },
+      colors:{
+        'dark-primary':'#111'
       }
 
     },
