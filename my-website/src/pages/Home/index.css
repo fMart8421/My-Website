@@ -1,0 +1,19 @@
+:root{
+    --rotation-duration: 40s;
+}
+
+.rotation{
+    transform-origin:left top;
+    animation: orbit var(--rotation-duration) linear infinite;
+}
+
+.rotation-reverse{
+    transform-origin:left top;
+    animation: orbit var(--rotation-duration) linear reverse infinite;
+}
+
+@keyframes orbit {
+    100%{
+        rotate:1turn;
+    }
+}

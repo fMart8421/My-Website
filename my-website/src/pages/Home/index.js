@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import store, { setHeight } from '../../redux/store/store';
-import RoundedTopic from '../../components/RoundedTopic'
+import RoundedTopic from '../../components/RoundedTopic';
+
+import './index.css';
 
 const Home = () => {
   const [headerHeight, setHeaderHeight] = useState(store.getState().headerHeight);
@@ -8,62 +10,62 @@ const Home = () => {
   const [radius, setRadius] = useState(height / 3); //radius of the circumference
   const [circumferenceClassName, setCircumferenceClassName] = useState("")
   const [center, setCenter] = useState([window.innerWidth / 2, height / 2 + store.getState().headerHeight]); // [x, y] 
-  const [position, setPosition] = useState([0, 0]);
-  const [xAxis, setXAxis] = useState([0, 0]);
+  const [rotationCenter, setRotationCenter] = useState([radius, radius])
   const [roundedTopics, setRoundedTopics] = useState([]);
+  const [hover, setHover] = useState(false);
   const topics = ["Skills", "Contacts", "Hobbies", "Path", "GitHub"];
 
 
   useEffect(() => {
+    getPositions();
     setRadius(Math.round(height / 3));
-    setPosition([Math.round(center[0] - radius), Math.round(center[1])]);
-    setXAxis([Math.round(center[0] - radius), Math.round(center[0] + radius)]);
     setCircumferenceClassName(`absolute flex justify-center items-center rounded-full aspect-square border-2 border-white left-1/2 -translate-x-1/2 -translate-y-1/2`);
-    createTopics();
-    makeRotation();
   }, [])
 
-  const makeRotation = async () => {
-    while (true) {
-      for (let x = 0; x < 400; x++) {
-        createTopics(x/100);
-        await timer(100);
+  const getPositions = () => {
+    if (!hover) {
+      const _positions = [];
+      for (let i = 0; i < topics.length; i++) {
+        _positions.push([-Math.cos((3) * Math.PI / 2 + 2 * i * Math.PI / 5) * radius + rotationCenter[0], Math.sin((3) * Math.PI / 2 + 2 * i * Math.PI / 5) * radius + rotationCenter[1]]);
+      }
+      console.log(_positions);
+      return _positions;
+    }
+  }
+
+  const stopRotation = () => {
+    document.getElementById("center_of_rotation").style.animationPlayState = "paused";
+    for (const topic of topics) {
+      document.getElementById(topic).style.animationPlayState = "paused";
+    }
+  }
+
+  const startRotation = () => {
+    document.getElementById("center_of_rotation").style.animationPlayState = "running";
+    for (const topic of topics) {
+      document.getElementById(topic).style.animationPlayState = "running";
+    }
+  }
+
+  useEffect(() => {
+    const _roundedTopics = [];
+    const positions = getPositions();
+    for (let i = 0; i < topics.length; i++) {
+      if (positions[i]) {
+        _roundedTopics.push(
+          <RoundedTopic
+            id={topics[i]}
+            onMouseEnter={() => { setHover(true) }}
+            onMouseLeave={() => { setHover(false) }}
+            className={`absolute rounded-full ease-linear rotation-reverse -translate-x-1/2 -translate-y-1/2`}
+            title={topics[i]}
+            style={{ left: `${positions[i][0]}px`, top: `${positions[i][1]}px` }}>
+          </RoundedTopic>
+        )
       }
     }
-  }
-
-  const getPositions = (offset=0) => {
-    const perimeter = 2*Math.PI*radius;
-    const step = perimeter / topics.length;
-    const _positions = [];
-    for(let i=0; i<5; i++){
-        _positions.push([-Math.cos((offset+4)*Math.PI/2 + 2*i*Math.PI/5)*radius+center[0], Math.sin((offset+4)*Math.PI/2 + 2*i*Math.PI/5)*radius+center[1]]);
-    }
-    return _positions;
-  }
-
-  const circumferenceFunction = (_direction, _radius, _center, _x) => {
-    switch (_direction) {
-      case "positive":
-        return Math.sqrt(Math.pow(_radius, 2) - Math.pow(_x - _center[0], 2)) + _center[1];
-        
-      case "negative":
-        return -Math.sqrt(Math.pow(_radius, 2) - Math.pow(_x - _center[0], 2)) + _center[1];
-      default:
-        return null;
-    }
-  }
-
-  const createTopics = (offset=0) => {
-    const _roundedTopics = [];
-    const positions = getPositions(offset);
-    for (let i = 0; i<positions.length; i++) {
-      _roundedTopics.push(<RoundedTopic className={`absolute -translate-x-1/2 -translate-y-1/2 rounded-full transition ease-linear`} title={topics[i]} style={{ left: `${positions[i][0]}px`, top: `${positions[i][1]}px` }}></RoundedTopic>)
-    }
     setRoundedTopics(_roundedTopics);
-  }
-
-  const timer = ms => new Promise(res => setTimeout(res, ms))
+  }, []);
 
   return (
     <div className="">
@@ -71,7 +73,15 @@ const Home = () => {
         <p className="text-lg">So, what do you want to know?</p>
 
       </div>
-      {roundedTopics}
+      <div 
+      onMouseEnter={stopRotation} 
+      onMouseLeave={startRotation} 
+      id="center_of_rotation" 
+      className="rotation absolute -translate-x-1/2 -translate-y-1/2 left-1/2 flex w-min aspect-square" 
+      style={{ height: `${2 * radius}px`, top: `${center[1]}px` }}>
+        {roundedTopics}
+      </div>
+
     </div>
   )
 }
