@@ -16,7 +16,7 @@ const Welcome = () => {
             </div>
             <div className="col-span-3 pt-32 pl-[15%] pr-[15%] flex flex-col">
                 <p className="text-[3rem]">Are you here to learn more about me? Well then...</p>
-                <Link to="/home">
+                <Link to="/home" className="self-center max-w-max">
                     <div className="self-center flex flex-col items-center mt-16">
                         <img className="h-[250px] w-[250px] rounded-full" src="https://cdn.discordapp.com/attachments/835904110137442335/1009899105260154980/Fabio_2.jpg" alt="Young Male"></img>
                         <p className="text-4xl mt-4">Click Me!</p>
