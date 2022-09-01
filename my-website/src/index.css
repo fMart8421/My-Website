@@ -6,16 +6,37 @@ body {
   background-color: #111;
   color: #fff;
   font-family: 'Walter Turncoat';
+  scroll-behavior: smooth;
 }
+
+
 #root{
   min-height:100vh;
   display:flex;
+  flex-direction: column;
+  scrollbar-gutter: 0.5rem;
+  cursor: url(cursor.svg), auto;
+
+}
+
+a{
+  cursor: url(cursor.svg), pointer;
+
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+/* 
+######################################
+###########
+###########  Tailwind custom classes
+###########
+######################################
+*/
 
 
 @layer base {
@@ -25,4 +46,28 @@ code {
   .walter-turncoat{
     font-family: 'Walter Turncoat';
   }
+}
+
+/* 
+##############################
+###########
+###########  Custom Scrollbar
+###########
+##############################
+*/
+
+/* width */
+::-webkit-scrollbar {
+  width: 0.5rem;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #111;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #fff;
+  border-radius: 999999999px;
 }
