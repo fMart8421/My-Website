@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import store, { setHeight } from '../../redux/store/store';
+import store from '../../redux/store/store';
 import RoundedTopic from '../../components/RoundedTopic';
 
 import './index.css';
@@ -28,7 +28,6 @@ const Home = () => {
       for (let i = 0; i < topics.length; i++) {
         _positions.push([-Math.cos((3) * Math.PI / 2 + 2 * i * Math.PI / 5) * radius + rotationCenter[0], Math.sin((3) * Math.PI / 2 + 2 * i * Math.PI / 5) * radius + rotationCenter[1]]);
       }
-      console.log(_positions);
       return _positions;
     }
   }
