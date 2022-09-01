@@ -1,22 +1,43 @@
 import React, { useLayoutEffect, useRef } from 'react';
-import store, {setHeight, setWidth} from '../../redux/store/store';
+import { Link } from 'react-router-dom';
+import store, { setHeight, setWidth } from '../../redux/store/store';
 
 
 import Name from '../Name';
+import PageTitle from '../PageTitle';
 
 const Header = (props) => {
 
-  const ref = useRef(null);
+  const titles = {
+    "/github": "GitHub",
+    "/contacts": "Contacts",
+    "/skills": "Skills",
+    "/path": "Path",
+    "/hobbies": "Hobbies"
+  }
 
-  useLayoutEffect(() =>{
-    store.dispatch(setHeight(ref.current.offsetHeight));
-    store.dispatch(setWidth(ref.current.offsetWidth));
+  const linkRef = useRef(null);
+  const headerRef = useRef(null);
+
+  useLayoutEffect(() => {
+    store.dispatch(setHeight(linkRef.current.offsetHeight));
+    store.dispatch(setWidth(headerRef.current.offsetWidth));
   }, [])
 
   return (
-    <header ref={ref} className="bg-black absolute left-1/2 -translate-x-1/2 w-3/5 flex justify-center pb-4">
-        <Name multiline={false} className=" text-[4.5rem]" />
-    </header>
+    <div className="self-center w-3/5 flex flex-col">
+      <header
+        ref={headerRef}
+        className="bg-dark-primary shadow-md shadow-white/10 flex flex-col items-center pb-4"
+
+      >
+        <Link ref={linkRef} to="/">
+          <Name multiline={false} className=" text-[4.5rem]" />
+        </Link>
+      </header>
+        {props.title !== "/home" && <PageTitle className="self-center" title={titles[props.title]}></PageTitle>}
+
+    </div>
   )
 }
 
