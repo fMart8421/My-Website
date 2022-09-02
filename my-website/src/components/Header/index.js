@@ -1,6 +1,7 @@
-import React, { useLayoutEffect, useRef } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useLayoutEffect, useRef, useEffect, useState } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import store, { setHeight, setWidth } from '../../redux/store/store';
+import Hamburguer from '../Hamburguer';
 
 
 import Name from '../Name';
@@ -16,8 +17,16 @@ const Header = (props) => {
     "/hobbies": "Hobbies"
   }
 
+  const location = useLocation();
   const linkRef = useRef(null);
   const headerRef = useRef(null);
+  const [showHamburger, setShowHamburger] = useState(false);
+
+  useEffect(() => {
+    console.log(location.pathname!=="/home")
+    setShowHamburger(location.pathname!=="/home");
+  }, [location]);
+
 
   useLayoutEffect(() => {
     store.dispatch(setHeight(linkRef.current.offsetHeight));
@@ -28,9 +37,10 @@ const Header = (props) => {
     <div className="self-center w-3/5 flex flex-col">
       <header
         ref={headerRef}
-        className="bg-dark-primary shadow-md shadow-white/10 flex flex-col items-center pb-4"
+        className="relative bg-dark-primary shadow-md shadow-white/10 flex flex-col items-center pb-4"
 
       >
+        {showHamburger && <Hamburguer></Hamburguer>}
         <Link ref={linkRef} to="/">
           <Name multiline={false} className=" text-[4.5rem]" />
         </Link>
