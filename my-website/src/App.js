@@ -8,6 +8,7 @@ import Home from './pages/Home';
 import GitHub from './pages/GitHub';
 
 import Header from './components/Header';
+import Contacts from './pages/Contacts';
 
 function App() {
 
@@ -26,6 +27,7 @@ function App() {
         <Route exact path="/" element={<Welcome></Welcome>} />
         <Route exact path="/home" element={<Home></Home>} />
         <Route exact path="/github" element={<GitHub></GitHub>} />
+        <Route exact path="/contacts" element={<Contacts></Contacts>} />
       </Routes>
 
     </Provider>
