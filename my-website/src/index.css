@@ -15,12 +15,12 @@ body {
   display:flex;
   flex-direction: column;
   scrollbar-gutter: 0.5rem;
-  cursor: url(cursor.svg), auto;
+  cursor: url(./utilities/svg/cursor.svg), auto;
 
 }
 
 a{
-  cursor: url(cursor.svg), pointer;
+  cursor: url(./utilities/svg/cursor.svg), pointer;
 
 }
 
