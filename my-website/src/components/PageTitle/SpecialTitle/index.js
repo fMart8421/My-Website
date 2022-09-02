@@ -3,7 +3,7 @@ import React from 'react'
 import { openWindow } from '../../../utilities/functions/utilityFunctions';
 
 const SpecialTitle = (props) => {
-  const className = "hover:underline hover:underline-offset-2 transition ease-out duration-1000 " + props.className
+  const className = "hover:underline hover:underline-offset-2 transition ease-out duration-1000 cursor-pointer " + props.className
 
   return (
     <div

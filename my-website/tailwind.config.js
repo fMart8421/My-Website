@@ -5,8 +5,10 @@ module.exports = {
     container: {
       padding: {
         DEFAULT: '10%',
-
       }
+    },
+    cursor:{
+      pointer:"url(./utilities/svg/cursor-pointer.svg) 22 22, pointer"
     },
     extend: {
       colors:{
