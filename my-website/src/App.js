@@ -9,6 +9,7 @@ import GitHub from './pages/GitHub';
 
 import Header from './components/Header';
 import Contacts from './pages/Contacts';
+import Skills from './pages/Skills';
 
 function App() {
 
@@ -28,6 +29,7 @@ function App() {
         <Route exact path="/home" element={<Home></Home>} />
         <Route exact path="/github" element={<GitHub></GitHub>} />
         <Route exact path="/contacts" element={<Contacts></Contacts>} />
+        <Route exact path="/skills" element={<Skills></Skills>} />
       </Routes>
 
     </Provider>
