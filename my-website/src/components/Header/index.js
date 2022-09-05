@@ -21,17 +21,20 @@ const Header = (props) => {
   const linkRef = useRef(null);
   const headerRef = useRef(null);
   const [showHamburger, setShowHamburger] = useState(false);
+  const [openMenu, setOpenMenu] = useState(false);
 
   useEffect(() => {
-    console.log(location.pathname!=="/home")
     setShowHamburger(location.pathname!=="/home");
   }, [location]);
-
 
   useLayoutEffect(() => {
     store.dispatch(setHeight(linkRef.current.offsetHeight));
     store.dispatch(setWidth(headerRef.current.offsetWidth));
-  }, [])
+  }, []);
+
+  const loadItems = ()=>{
+
+  }
 
   return (
     <div className="self-center w-3/5 flex flex-col">
@@ -40,7 +43,7 @@ const Header = (props) => {
         className="relative bg-dark-primary shadow-md shadow-white/10 flex flex-col items-center pb-4"
 
       >
-        {showHamburger && <Hamburguer></Hamburguer>}
+        {showHamburger && <Hamburguer onClick={()=>setOpenMenu(true)}></Hamburguer>}
         <Link ref={linkRef} to="/">
           <Name multiline={false} className=" text-[4.5rem]" />
         </Link>
