@@ -1,11 +1,12 @@
 import React, {useState} from 'react'
 
-const Hamburguer = () => {
+const Hamburguer = (props) => {
 
     const [hamburguerToggled, setHamburguerToggled] = useState(false);
 
     const toggleHamburguer = ()=>{
         setHamburguerToggled(!hamburguerToggled);
+        props.onClick();
     }
 
   return (
