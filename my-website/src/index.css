@@ -15,13 +15,11 @@ body {
   display:flex;
   flex-direction: column;
   scrollbar-gutter: 0.5rem;
-  cursor: url(./utilities/svg/cursor.svg), auto;
-
+  cursor: url(../public/svg/cursor/cursor.svg), auto;
 }
 
 a{
-  cursor: url(./utilities/svg/cursor.svg), pointer;
-
+  cursor: url(../public/svg/cursor/cursor-pointer.svg) 22 22, pointer;
 }
 
 code {
@@ -45,6 +43,9 @@ code {
   }
   .walter-turncoat{
     font-family: 'Walter Turncoat';
+  }
+  .cursor-pointer{
+    cursor: url(../public/svg/cursor/cursor-pointer.svg), pointer;
   }
 }
 

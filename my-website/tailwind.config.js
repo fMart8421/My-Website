@@ -8,7 +8,7 @@ module.exports = {
       }
     },
     cursor:{
-      pointer:"url(./utilities/svg/cursor-pointer.svg) 22 22, pointer"
+      pointer:"url(../public/svg/cursor/cursor-pointer.svg) 22 22, pointer"
     },
     extend: {
       colors:{
