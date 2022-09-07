@@ -12,7 +12,7 @@ const PauseMenu = (props) => {
     useEffect(() => {
         switch (currentItems) {
             case "pauseMenu":
-                setMenuTitle("Change Page");
+                setMenuTitle("Pause Menu");
                 setItems(<PauseMenuItems dismiss={props.dismiss} navigate={props.navigate} changePage={()=>setCurrentItems("changePage")}></PauseMenuItems>);
                 break;
             case "changePage":
@@ -35,8 +35,16 @@ const PauseMenu = (props) => {
         return _pages;
     }
 
+    const closeMenu = () => {
+        setMenuTitle("Pause Menu");
+        props.dismiss();
+    }
+
     return (
-        <div className="absolute top-0 left-0 bg-black/90 h-full w-full z-10">
+        <div className="absolute top-0 left-0 h-full w-full z-10"
+        >
+            <div className="absolute top-0 left-0 bg-black/90 h-full w-full" onClick={closeMenu}>
+            </div>
             <div
                 className="w-1/2 h-2/3 rounded-md absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col justify-center"
             >
