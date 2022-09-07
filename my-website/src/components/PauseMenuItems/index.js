@@ -16,6 +16,12 @@ const PauseMenuItems = (props) => {
                 Change Page
             </p>
             <p
+                onClick={() => props.navigate("/home")}
+                className="py-4 border-y-2 border-dark-primary hover:border-white hover:bg-black"
+            >
+                Main Menu
+            </p>
+            <p
                 onClick={() => props.navigate("/about")}
                 className="py-4 border-t-2 border-dark-primary hover:border-white hover:bg-black"
             >
