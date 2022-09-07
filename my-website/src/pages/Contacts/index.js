@@ -15,10 +15,10 @@ const Contacts = () => {
         <Contact onClick={()=>{openWindow("email")}} alt="Email" image={"/svg/contacts/email.svg"} hoverContent="fabio.martins.work@gmail.com">
         <p className="text-3xl ml-8">Send me an <span className="text-purple-500">email</span> ...</p>
         </Contact>
-        <Contact onClick={()=>{openWindow("linkedin")}} alt="LinkedIn" image={"/svg/contacts/email.svg"} hoverContent="Fábio Martins">
+        <Contact onClick={()=>{openWindow("linkedin")}} alt="LinkedIn" image={"/svg/contacts/linkedin.svg"} hoverContent="Fábio Martins">
         <p className="text-3xl ml-8"><span className="text-purple-500">Connect</span> with me ...</p>
         </Contact>
-        <Contact onClick={()=>{openWindow("instagram")}} alt="Instagram" image={"/svg/contacts/email.svg"} hoverContent="fabio_mart0">
+        <Contact onClick={()=>{openWindow("instagram")}} alt="Instagram" image={"/svg/contacts/instagram.svg"} hoverContent="fabio_mart0">
         <p className="text-3xl ml-8">Or <span className="text-purple-500">stalk</span> me if you wish</p>
         </Contact>
       </div>
