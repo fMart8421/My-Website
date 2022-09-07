@@ -1,11 +1,12 @@
 import React, { useLayoutEffect, useRef, useEffect, useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import store, { setHeight, setWidth } from '../../redux/store/store';
 import Hamburguer from '../Hamburguer';
 
 
 import Name from '../Name';
 import PageTitle from '../PageTitle';
+import PauseMenu from '../PauseMenu';
 
 const Header = (props) => {
 
@@ -14,14 +15,17 @@ const Header = (props) => {
     "/contacts": "Contacts",
     "/skills": "Skills",
     "/path": "Path",
-    "/hobbies": "Hobbies"
+    "/hobbies": "Hobbies",
+    "/about":"About Me"
   }
 
+  const navigate = useNavigate();
   const location = useLocation();
   const linkRef = useRef(null);
   const headerRef = useRef(null);
   const [showHamburger, setShowHamburger] = useState(false);
   const [openMenu, setOpenMenu] = useState(false);
+
 
   useEffect(() => {
     setShowHamburger(location.pathname!=="/home");
@@ -32,8 +36,9 @@ const Header = (props) => {
     store.dispatch(setWidth(headerRef.current.offsetWidth));
   }, []);
 
-  const loadItems = ()=>{
-
+  const navigateTo=(_location)=>{
+    setOpenMenu(false);
+    navigate(_location);
   }
 
   return (
@@ -49,6 +54,7 @@ const Header = (props) => {
         </Link>
       </header>
         {props.title !== "/home" && <PageTitle className="self-center" title={titles[props.title]}></PageTitle>}
+        {openMenu && <PauseMenu currentPage={props.title} pages={titles} dismiss={()=>setOpenMenu(false)} navigate={navigateTo}></PauseMenu>}
 
     </div>
   )
