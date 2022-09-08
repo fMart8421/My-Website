@@ -1,0 +1,31 @@
+.text-bounce{
+    animation: bounce 3s ease-out infinite;
+    transform-origin: bottom;
+}
+
+@keyframes bounce {
+    2.5%{
+        transform: scale(1.3, 0.5) translateY(0px);
+    }
+    7.5% {
+        transform: translateY(-20%) scale(1, 1);
+    }
+    12.5% {
+        transform: translateY(-40%) scale(1, 1);
+    }
+    13%{
+        transform: translateY(-40%) scale(1, 0.8); 
+    }
+    20% {
+        transform: translateY(0px) scale(1, 1);  
+    }
+    22.5% {
+        transform: translateY(0px) scale(1.3, 0.5);
+    }
+    25% {
+        transform: scale(1, 1) translateY(0px);
+    }
+    100% {
+        transform: scale(1, 1) translateY(0px);
+    }
+}

@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import Name from '../../components/Name'
 
-
+import './index.css'
 
 const Welcome = () => {
     return (
@@ -19,7 +19,17 @@ const Welcome = () => {
                 <Link to="/home" className="self-center max-w-max">
                     <div className="self-center flex flex-col items-center mt-16">
                         <img className="h-[250px] w-[250px] rounded-full" src="https://cdn.discordapp.com/attachments/835904110137442335/1009899105260154980/Fabio_2.jpg" alt="Young Male"></img>
-                        <p className="text-4xl mt-4">Click Me!</p>
+                        <div className="text-4xl mt-4 flex">
+                            <p className="text-bounce mr-1" style={{animationDelay:".s"}}>C</p>
+                            <p className="text-bounce mr-1" style={{animationDelay:".1s"}}>l</p>
+                            <p className="text-bounce mr-1" style={{animationDelay:".2s"}}>i</p>
+                            <p className="text-bounce mr-1" style={{animationDelay:".3s"}}>c</p>
+                            <p className="text-bounce mr-4" style={{animationDelay:".4s"}}>k</p>
+                            <p className="text-bounce mr-1" style={{animationDelay:".5s"}}>m</p>
+                            <p className="text-bounce mr-1" style={{animationDelay:".6s"}}>e</p>
+                            <p className="text-bounce" style={{animationDelay:".7s"}}>!</p>
+                            
+                            </div>
                     </div>
                 </Link>
             </div>
