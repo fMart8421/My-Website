@@ -1,0 +1,27 @@
+export const topics = [
+    {
+      id:1,
+      name:"Contacts",
+      path:"/contacts"
+    },
+    {
+      id:2,
+      name:"GitHub",
+      path:"/github"
+    },
+    {
+      id:3,
+      name:"Hobbies",
+      path:"/hobbies"
+    },
+    {
+      id:4,
+      name:"Path",
+      path:"/path"
+    },
+    {
+      id:5,
+      name:"Skills",
+      path:"/skills"
+    },
+  ]

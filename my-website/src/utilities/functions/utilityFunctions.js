@@ -39,5 +39,9 @@ const getProjects = (_project, id) => {
     
 }
 
+const getPosition = (_offset, _radius, _division) => {
+    return [Math.cos(_offset*2*Math.PI/_division)*_radius+_radius,Math.sin(_offset*2*Math.PI/_division)*_radius+_radius]
+  }
 
-export { openWindow, sleep, closeMenu, getProjects };
+
+export { openWindow, sleep, closeMenu, getProjects, getPosition };
