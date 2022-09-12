@@ -35,7 +35,7 @@ function App() {
 
   return (
     <Provider store={store}>
-      {hideHeader && <Header title={location.pathname}></Header>}
+      {!hideHeader && <Header title={location.pathname}></Header>}
       <Routes className="">
         <Route exact path="/" element={<Welcome></Welcome>} />
         <Route exact path="/home" element={<Home></Home>} />
