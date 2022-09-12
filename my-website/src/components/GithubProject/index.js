@@ -2,10 +2,12 @@ import React from 'react';
 
 const GithubProject = (props) => {
 
+    const className= "bg-white text-dark-primary container flex flex-col justify-between flex-wrap rounded fade-in " + props.className
 
     return (
-        <div className="bg-white text-dark-primary container flex flex-col justify-between flex-wrap rounded"
-        
+        <div className={className}
+        style={props.style}
+        key={props.key}
         >
             <div className="bg-dark-primary mt-4 flex justify-center mx-[10%] mb-2 rounded cursor-pointer" onClick={props.redirectTo}>
                 <p className="py-2 text-xl text-white ">{props.title}</p>
