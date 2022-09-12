@@ -9,7 +9,6 @@ body {
   scroll-behavior: smooth;
 }
 
-
 #root{
   min-height:100vh;
   display:flex;
@@ -27,13 +26,57 @@ code {
     monospace;
 }
 
+.open-scroll {
+  animation: scroll-items-down 1s ease-out forwards;
+}
+
+.close-scroll {
+  animation: scroll-items-up 1s ease-out forwards;
+}
+
+.fade-in {
+  opacity:0;
+  animation: fade-in 1s ease-out forwards;
+}
+
+.fade-out {
+  animation: fade-out 1s ease-in forwards;
+}
+
+
+.typewriter{
+  border:1px solid;
+  animation: typing .5s ease infinite;
+}
+
+.bounce-in{
+  scale:1 0;
+  animation: bounce-in .5s linear forwards;
+}
+
+
+.stretch-in {
+  scale:0 1;
+  animation: stretch-in 1s ease forwards;
+}
+
+.stretch-out {
+  animation: stretch-out 1s ease forwards;
+}
+
+.text-bounce {
+  animation: bounce 3s ease-out infinite;
+  transform-origin: bottom;
+}
+
+
 
 /* 
-######################################
-###########
-###########  Tailwind custom classes
-###########
-######################################
+###################################################################################################################################
+###########                            ############################################################################################
+###########  Tailwind custom classes   ############################################################################################
+###########                            ############################################################################################
+###################################################################################################################################
 */
 
 
@@ -44,17 +87,14 @@ code {
   .walter-turncoat{
     font-family: 'Walter Turncoat';
   }
-  .cursor-pointer{
-    cursor: url(../public/svg/cursor/cursor-pointer.svg), pointer;
-  }
 }
 
 /* 
-##############################
-###########
-###########  Custom Scrollbar
-###########
-##############################
+############################################################################################################################
+###########                     ############################################################################################
+###########  Custom Scrollbar   ############################################################################################
+###########                     ############################################################################################
+############################################################################################################################
 */
 
 /* width */
@@ -72,3 +112,121 @@ code {
   background: #fff;
   border-radius: 999999999px;
 }
+
+
+/* ####################################################################################################################
+###########                ############################################################################################
+###########  Animations    ############################################################################################
+###########                ############################################################################################
+#######################################################################################################################
+*/
+
+@keyframes scroll-items-down {
+  from { 
+    max-height:0px;
+  }
+  to {
+    max-height:70vh;
+  }
+}
+@keyframes scroll-items-up {
+  from { 
+    max-height:70vh;
+  }
+  to {
+    max-height:0px;
+  }
+}
+
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to{
+    opacity: 1;
+  }
+}
+
+@keyframes fade-out {
+  from {
+    opacity: 1;
+  }
+  to{
+    opacity: 0;
+  }
+}
+
+@keyframes typing {
+  from {
+    border-color:transparent;
+  }
+  to {
+    border-color:#fff;
+  }
+}
+
+@keyframes bounce-in {
+  0% {
+    scale:1 0;
+  }
+  95% {
+    scale:1 1.3;
+  }
+  100% {
+    scale:1;
+  }
+}
+
+@keyframes stretch-in {
+  0% {
+    scale:0 1;
+  }
+  100% {
+    scale:1 1;
+  }
+}
+
+@keyframes stretch-out {
+  0% {
+    scale:1 1;
+  }
+  100% {
+    scale:0 1;
+  }
+}
+
+
+@keyframes bounce {
+  2.5% {
+      transform: scale(1.3, 0.5) translateY(0px);
+  }
+  5% {
+      transform: scale(0.7, 1.3) translateY(0px);
+  }
+  7.5% {
+      transform: translateY(-20%) scale(1, 1);
+  }
+  12.5% {
+      transform: translateY(-40%) scale(1, 1);
+  }
+  13% {
+      transform-origin: top;
+      transform: translateY(-40%) scale(0.8, 1.2);
+  }
+  20% {
+      transform: translateY(0px) scale(1, 1);
+      transform-origin: bottom;
+  }
+  22.5% {
+      transform: translateY(0px) scale(1.3, 0.5);
+  }
+  25% {
+      transform: scale(1, 1) translateY(0px);
+  }
+  100% {
+      transform: scale(1, 1) translateY(0px);
+  }
+}
+
+
