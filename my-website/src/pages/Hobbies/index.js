@@ -20,7 +20,7 @@ const Hobbies = () => {
 
             </div>
             <div></div>
-            <Menu className="col-span-3 flex flex-col justify-between"
+            <Menu className="col-span-3 flex flex-col justify-between fade-in"
                 title="Hobbies Inventory" menuIcon="/svg/hobbies/inventory-icon.svg"
             >
                 <div className="grid grid-cols-3 gap-4 overflow-y-scroll my-4 grid-rows-2">
