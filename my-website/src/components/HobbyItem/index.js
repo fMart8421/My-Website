@@ -1,4 +1,5 @@
-import React from 'react'
+import React, {useRef} from 'react'
+import { sleep } from '../../utilities/functions/utilityFunctions';
 
 const HobbyItem = (props) => {
 
@@ -9,16 +10,27 @@ const HobbyItem = (props) => {
         "Legendary": "#FFC633",
     }
 
+    const itemRef = useRef(null);
+
+    const closeItem = async () => {
+        itemRef.current.classList.add("fade-out");
+        await sleep(1000);
+        props.close()
+    }
+
     return (
-        <div className="absolute top-0 left-0 w-full h-full bg-black/90 flex items-center justify-center">
-            <div className="h-2/3 w-2/5 bg-dark-primary rounded-md flex flex-col">
+        <div ref={itemRef} className="absolute top-0 left-0 w-full h-full bg-black/90 flex items-center justify-center fade-in">
+            <div 
+            className="h-2/3 w-2/5 bg-dark-primary rounded-md flex flex-col fade-in"
+            style={{animationDelay: `200ms`}}
+            >
                 <div className="relative border-b-2 border-white/30">
                     <p className="text-center text-4xl py-2">{props.hobby.name}</p>
                     <img
                         alt="Close Icon"
                         className="absolute right-6 top-1/2 -translate-y-1/2 h-8 cursor-pointer"
                         src="/svg/close-icon.svg"
-                        onClick={props.close}
+                        onClick={closeItem}
                     ></img>
                 </div>
                 <div className="container relative overflow-y-scroll">
