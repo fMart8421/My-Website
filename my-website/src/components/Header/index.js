@@ -50,7 +50,7 @@ const Header = (props) => {
       >
         {showHamburger && <Hamburguer onClick={()=>setOpenMenu(true)}></Hamburguer>}
         <Link ref={linkRef} to="/">
-          <Name multiline={false} className=" text-[4.5rem]" />
+          <Name className=" text-[4.5rem] grid grid-cols-2" />
         </Link>
       </header>
         {props.title !== "/home" && <PageTitle className="self-center" title={titles[props.title]}></PageTitle>}
