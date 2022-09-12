@@ -74,6 +74,10 @@ code {
   animation: blurr-fade-out 1s linear forwards;
 }
 
+.width-shrink{
+  transform-origin:left;
+  animation:width-shrink 0.8s linear forwards;
+}
 
 /* 
 ###################################################################################################################################
@@ -244,5 +248,16 @@ code {
     opacity:0;
   }
 }
+
+@keyframes width-shrink {
+  0%{
+    z-index:-10;
+  }
+  100%{
+    z-index:-10;
+    translate:-100% 0px;
+  }
+}
+
 
 
