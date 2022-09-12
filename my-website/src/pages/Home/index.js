@@ -8,18 +8,17 @@ const Home = () => {
   const [headerHeight, setHeaderHeight] = useState(store.getState().headerHeight);
   const [height, setHeight] = useState(window.innerHeight - headerHeight);
   const [radius, setRadius] = useState(height / 3); //radius of the circumference
-  const [circumferenceClassName, setCircumferenceClassName] = useState("")
   const [center, setCenter] = useState([window.innerWidth / 2, height / 2 + store.getState().headerHeight]); // [x, y] 
   const [rotationCenter, setRotationCenter] = useState([radius, radius])
   const [roundedTopics, setRoundedTopics] = useState([]);
   const [hover, setHover] = useState(false);
   const topics = ["Skills", "Contacts", "Hobbies", "Path", "GitHub"];
+  const [unrenderImage, setUnrenderImage] = useState(false);
 
 
   useEffect(() => {
     getPositions();
     setRadius(Math.round(height / 3));
-    setCircumferenceClassName(`absolute flex justify-center items-center rounded-full aspect-square border-2 border-white left-1/2 -translate-x-1/2 -translate-y-1/2`);
   }, [])
 
   const getPositions = () => {
@@ -68,16 +67,19 @@ const Home = () => {
 
   return (
     <div className="">
-      <div className={circumferenceClassName} style={{ height: `${2 * radius}px`, top: `${center[1]}px` }}>
+      <div
+        className={`absolute flex justify-center items-center rounded-full aspect-square border-2 border-white left-1/2 -translate-x-1/2 -translate-y-1/2`}
+        style={{ height: `${2 * radius}px`, top: `${center[1]}px` }}
+      >
         <p className="text-lg">So, what do you want to know?</p>
 
       </div>
-      <div 
-      onMouseEnter={stopRotation} 
-      onMouseLeave={startRotation} 
-      id="center_of_rotation" 
-      className="rotation absolute -translate-x-1/2 -translate-y-1/2 left-1/2 flex w-min aspect-square" 
-      style={{ height: `${2 * radius}px`, top: `${center[1]}px` }}>
+      <div
+        onMouseEnter={stopRotation}
+        onMouseLeave={startRotation}
+        id="center_of_rotation"
+        className="rotation fixed -translate-x-1/2 -translate-y-1/2 left-1/2 flex w-min aspect-square"
+        style={{ height: `${2 * radius}px`, top: `${center[1]}px` }}>
         {roundedTopics}
       </div>
 

@@ -17,4 +17,27 @@ const openWindow = (_window) => {
     }
 }
 
-export { openWindow };
+const sleep =  (_ms) => {
+    return new Promise(resolve => setTimeout(resolve, _ms));
+}
+
+const closeMenu = async (_id, _className, _ms,_subsequentFunction, _subsequentFunctionArgs)=>{
+    document.getElementById(_id).classList.add(_className);
+    await sleep(_ms);
+    _subsequentFunction(_subsequentFunctionArgs);
+}
+
+
+const getProjects = (_project, id) => {
+    let project = {};
+    project["id"] = _project.id;
+    project["name"] = _project.name;
+    project["path"] = _project.clone_url;
+    project["languages"] = _project.topics;
+    project["description"] = _project.description;
+    return project;
+    
+}
+
+
+export { openWindow, sleep, closeMenu, getProjects };

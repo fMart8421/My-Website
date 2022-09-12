@@ -1,8 +1,13 @@
 import React from 'react'
 
 const Contact = (props) => {
+    const className="relative flex items-center ml-8 text-xl flex-grow-0 bounce-in origin-top " + props.className
     return (
-        <div className="relative flex items-center ml-8 text-xl flex-grow-0">
+
+        <div
+        style={props.style} 
+        className={className}
+        >
             <img src={props.image} alt={props.alt} className=""></img>
             {props.children}
             <div onClick={props.onClick}

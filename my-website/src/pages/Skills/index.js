@@ -11,7 +11,7 @@ const Skills = () => {
     const skillsWidth = store.getState().headerWidth;
 
     return (
-        <div className="container my-8 flex justify-center">
+        <div className="container my-8 flex justify-center fade-in ">
             <Menu className="relative flex flex-col "
                 style={{ width: `${skillsWidth}px` }}
                 title="Skill List" 
@@ -19,9 +19,9 @@ const Skills = () => {
             >
                 <div className="overflow-y-scroll ">
                     {
-                        skillLevels.map((_skill, key) =>{
+                        skillLevels.map((_skill, _index) =>{
                             return(
-                                <Skill skill={_skill.name} level={_skill.level} icon={_skill.icon}></Skill>
+                                <Skill key={_skill.id} skill={_skill.name} level={_skill.level} icon={_skill.icon}></Skill>
                             )
                         })
                     }

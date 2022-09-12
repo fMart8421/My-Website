@@ -5,19 +5,18 @@ import SpecialTitle from './SpecialTitle';
 
 
 const PageTitle = (props) => {
-    const [subtitle, setSubtitle] = useState("");
 
-    const [className, setClassName] = useState(props.className + " bg-white rounded-b-[100%] text-dark-primary flex flex-col items-center");
+    const className = props.className + " bg-white rounded-b-[100%] text-dark-primary flex flex-col items-center w-2/5 ";
     const [returningComponent, setReturningComponent] = useState(<></>)
     const headerHeight = store.getState().headerHeight;
-    const titleWidth = store.getState().headerWidth / 2.5;
+    const titleWidth = store.getState().headerWidth *2/5;
 
     useEffect(() => {
         props.title === "GitHub" ?
             setReturningComponent(<SpecialTitle className={className} top={headerHeight} width={titleWidth} link="https://github.com/fMart8421" subtitle="My Projects" title={props.title}></SpecialTitle>)
             :
             setReturningComponent(<RegularTitle className={className} top={headerHeight} width={titleWidth} title={props.title} ></RegularTitle>)
-        
+
     }, [props.title])
 
     return returningComponent;

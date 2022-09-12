@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
 import GithubProject from '../../components/GithubProject';
-import { getProjects } from './getProjects';
+import { getProjects } from '../../utilities/functions/utilityFunctions'; 
 
 
 const GitHub = () => {
@@ -32,8 +32,8 @@ const GitHub = () => {
         const url = `https://api.github.com/${owner.type}/${owner.name}/repos`;
         const config = {};
         const data = await axios.get(url, config)
-        for (const projectData of data.data) {
-          _projects.push(getProjects(projectData));
+        for (let i = 0; i < data.data.length; i++) {
+          _projects.push(getProjects(data.data[i], i));
         }
        
       }
@@ -55,9 +55,15 @@ const GitHub = () => {
 
       <div className="container grid grid-cols-3 gap-16 mt-16">
         {projects.map((project, index) => {
-          console.log(project)
           return (
-            <GithubProject languages={project.languages} title={project.name} description={project.description} redirectTo={()=>{openWindow(project.path)}}></GithubProject>
+            <GithubProject 
+            key={project.id} 
+            style={{animationDelay:`.${index}s`}}
+            languages={project.languages} 
+            title={project.name} 
+            description={project.description} 
+            redirectTo={()=>{openWindow(project.path)}}
+            ></GithubProject>
           )
         })}
 

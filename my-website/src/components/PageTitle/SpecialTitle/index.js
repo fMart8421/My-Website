@@ -8,7 +8,6 @@ const SpecialTitle = (props) => {
   return (
     <div
       className={className}
-      style={{ top: props.top, width: props.width }}
       onClick={() => { openWindow("github") }}
     >
       <p className="text-3xl font-semibold pt-2 pb-1">{props.title}</p>
