@@ -3,12 +3,10 @@
 }
 
 .rotation{
-    transform-origin:left top;
     animation: orbit var(--rotation-duration) linear infinite;
 }
 
 .rotation-reverse{
-    transform-origin:left top;
     animation: orbit var(--rotation-duration) linear reverse infinite;
 }
 
