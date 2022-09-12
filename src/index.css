@@ -69,9 +69,9 @@ code {
   transform-origin: bottom;
 }
 
-.slide-up-3d{
-  transform-origin:center;
-  animation: slide-up-3d 3s ease-in forwards;
+.blurr-fade-out{
+  transform-origin:top;
+  animation: blurr-fade-out 1s linear forwards;
 }
 
 
@@ -235,21 +235,13 @@ code {
   }
 }
 
-@keyframes slide-up-3d {
-  10% {
-    z-index:100;
-    scale:0.8;
-    translate: -5% -5%;
+@keyframes blurr-fade-out {
+  50%{
+    filter:blur(10px);
   }
-  15% {
-    z-index:100;
-    scale:0.8 0.6;
-    translate: -5% -2%;
-  }
-  100% {
-    z-index:100;
-    scale:0.8;
-    translate: -5% -100%;
+  100%{
+    filter:blur(10px);
+    opacity:0;
   }
 }
 

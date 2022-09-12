@@ -7,14 +7,14 @@ const Welcome = () => {
     const navigate = useNavigate();
 
     const triggerChangePageAnimation = async () => {
-        document.getElementById("welcomePage").classList.add("stretch-out");
+        document.getElementById("welcomePage").classList.add("blurr-fade-out");
     }
 
 
     return (
         <div 
         id="welcomePage"
-        className="grid grid-cols-5 flex-grow origin-left "
+        className="grid grid-cols-5 flex-grow transition "
         onAnimationEnd={()=>{navigate("/home")}} 
         >
             <div className=" col-span-2 flex flex-col bg-black pt-36 pl-[15%] pr-[15%]">
