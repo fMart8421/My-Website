@@ -3,23 +3,22 @@ import { useNavigate } from 'react-router-dom'
 import { sleep } from '../../utilities/functions/utilityFunctions'
 
 const RoundedTopic = (props) => {
-    const [style, setStyle] = useState({})
+    const [style, setStyle] = useState({
+        left: "50%",
+        top: "50%",
+        animationDelay: "1s"
+    })
     const className = "text-xl font-medium bg-white aspect-square text-dark-primary flex items-center justify-center h-1/3 hover:scale-110 transition-all ease-out duration-500 " + props.className
     const navigate = useNavigate();
     const roundedTopicRef = useRef(null);
 
     useEffect(() => {
-        setStyle({
-            left: "50%",
-            top: "50%",
-            animationDelay:"1s"
-        })
         const changePosition = async () => {
             await sleep(1000);
             setStyle({
                 left: props.position[0] + "px",
                 top: props.position[1] + "px",
-                animationDelay:"1s"
+                animationDelay: "1s"
             })
         }
         changePosition();
@@ -34,7 +33,7 @@ const RoundedTopic = (props) => {
             style={style}
             onClick={() => { navigate(props.path) }}>
             <p
-            className="fade-in"
+                className="fade-in"
             >
 
                 {props.title}

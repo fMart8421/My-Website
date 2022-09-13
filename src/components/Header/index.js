@@ -45,7 +45,7 @@ const Header = (props) => {
     <div className="self-center w-3/5 flex flex-col">
       <header
         ref={headerRef}
-        className="relative bg-dark-primary shadow-md shadow-white/10 flex flex-col items-center pb-4"
+        className="relative bg-dark-primary shadow-md shadow-white/10 flex flex-col items-center pb-4 fade-in"
 
       >
         {showHamburger && <Hamburguer onClick={()=>setOpenMenu(true)}></Hamburguer>}
