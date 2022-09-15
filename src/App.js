@@ -14,6 +14,7 @@ import About from './pages/About';
 import Hobbies from './pages/Hobbies';
 import Loading from './components/Loading';
 import { sleep } from './utilities/functions/utilityFunctions';
+import Path from './pages/Path';
 
 function App() {
 
@@ -43,6 +44,7 @@ function App() {
         <Route exact path="/contacts" element={isLoading? <Loading></Loading>:<Contacts></Contacts>} />
         <Route exact path="/skills" element={isLoading? <Loading></Loading>:<Skills></Skills>} />
         <Route exact path="/hobbies" element={isLoading? <Loading></Loading>:<Hobbies></Hobbies>} />
+        <Route exact path="/path" element={isLoading? <Loading></Loading>:<Path></Path>} />
         <Route exact path="/about" element={isLoading? <Loading></Loading>:<About></About>} />
       </Routes>
 
