@@ -1,4 +1,4 @@
-import React, { useState, useEffect, Fragment } from 'react';
+import React, { useState,  Fragment } from 'react';
 import DashedPath from '../../components/DashedPath';
 import PathStop from '../../components/PathStop';
 import StopDetails from '../../components/StopDetails';
@@ -18,6 +18,8 @@ const Path = () => {
     mission={_path.mission}
     details={_path.details}
     location={_path.location}
+    duration={_path.duration}
+    extraContent={_path.extraContent}
     close={onClickCloseHandler}
     />
     )
@@ -28,7 +30,7 @@ const Path = () => {
   }
 
   return (
-    <section className="container mt-16 grid grid-cols-11 justify-items-center place-items-center gap-y-2">
+    <section className="container mt-16 grid grid-cols-11 justify-items-center place-items-center gap-y-2 fade-in">
       {openLocation}
       <div className="max-w-min">
         <div className="bg-white aspect-square h-12 rounded-full"></div>
@@ -48,7 +50,7 @@ const Path = () => {
             <PathStop
             onClick={onClickStopHandler} 
             path={_path}
-            title={_path.title}
+            title={_path.mission}
             ></PathStop>
           </Fragment>
         )
