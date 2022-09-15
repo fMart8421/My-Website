@@ -1,0 +1,24 @@
+.continuous-offset {
+    stroke-dasharray: 25px 32px;
+    animation: stroke-offset 40s linear infinite;
+}
+
+.continuous-offset-reverse {
+    stroke-dasharray: 25px 32px;
+    animation: stroke-offset 40s linear infinite reverse;
+}
+
+
+@keyframes stroke-offset {
+    0%{
+        stroke-dashoffset:0%;
+    }
+    50%{
+        stroke-dashoffset:-150%;
+    }
+
+    100%{
+        stroke-dashoffset:-301%;
+    }
+    
+}
