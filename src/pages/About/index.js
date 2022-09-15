@@ -1,17 +1,15 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const About = () => {
 
-  const onClickMeHandler = () => {
-
-  }
   return (
     <div className="container mt-16">
       <div className="grid grid-cols-12 gap-x-16">
-        <a href="/cv_FábioMartins.pdf" download className="col-span-3 flex flex-col align-center">
+        <Link to="/cv_FábioMartins.pdf" download target="_blank" className="col-span-3 flex flex-col align-center">
           <img alt="Fabitu" src="/svg/about/fabitu.svg" className="max-h-[20rem]"></img>
           <p className="text-center">Click me to get my <span className=" text-fuchsia-300">CV</span>!</p>
-        </a>
+        </Link>
 
         <div className="text-justify col-span-9">
           <p className="text-3xl"><span className="text-fuchsia-300 text-4xl">Hello there!</span> As I've said before, my name is Fábio Martins, nickname Fabitu (my friends call me that because I'm tall).</p>
