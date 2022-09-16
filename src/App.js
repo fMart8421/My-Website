@@ -3,11 +3,11 @@ import { Route, Routes, useLocation } from 'react-router-dom';
 
 import Header from './components/Header';
 
+import Welcome from './pages/Welcome'
 import Loading from './components/Loading';
 import { sleep } from './utilities/functions/utilityFunctions';
 import Path from './pages/Path';
 
-const Welcome = React.lazy(()=> import('./pages/Welcome'))
 const Home = React.lazy(()=> import('./pages/Home'))
 const GitHub = React.lazy(()=> import('./pages/GitHub'))
 const Contacts = React.lazy(()=> import('./pages/Contacts'))
