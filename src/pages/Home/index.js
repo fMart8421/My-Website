@@ -35,7 +35,7 @@ const Home = () => {
     });
 
     setRoundedTopics(_topics);
-  }, [circumferenceRef.current])
+  }, [circumferenceRef.current]) //this has a warning but here we want the effect to run whenever the ref does change
 
   /*
     Effect to take care of all the animation classes and states
@@ -43,9 +43,9 @@ const Home = () => {
   useEffect(() => {
     const addDelayedClassname = async () => {
       await sleep(1000);
-      centerTextRef.current.classList.add("opacity-100");
+      centerTextRef.current.classList.remove("opacity-0");
       circumferenceRef.current.classList.remove("border-transparent")
-      circumferenceRef.current.classList.add("rotation", "border-white")
+      circumferenceRef.current.classList.add("border-white")
       setIsEntering(false);
     }
     addDelayedClassname();
@@ -56,33 +56,34 @@ const Home = () => {
   When the center circumference is hovered, the rotation should pause
   */
   const stopRotationHandler = () => {
-    circumferenceRef.current.style.animationPlayState = "paused";
-    for (const child of circumferenceRef.current.children) {
-      child.style.animationPlayState = "paused";
-
+    if (!isEntering) {
+      circumferenceRef.current.style.animationPlayState = "paused";
+      for (const child of circumferenceRef.current.children) {
+        child.style.animationPlayState = "paused";
+      }
     }
   }
   /*
   The opposite of the previous function
   */
   const startRotationHandler = () => {
-    circumferenceRef.current.style.animationPlayState = "running";
-    for (const child of circumferenceRef.current.children) {
-      child.style.animationPlayState = "running";
+    if(!isEntering){
+      circumferenceRef.current.style.animationPlayState = "running";
+      for (const child of circumferenceRef.current.children) {
+        child.style.animationPlayState = "running";
+      }
     }
   }
 
   return (
     <div className="relative flex-grow flex-shrink basis-0 flex justify-center items-center">
-      {isEntering && <div
-        className="absolute left-0 top-0 w-full h-full z-30"
-      >
-      </div>}
       <div
         onMouseEnter={stopRotationHandler}
         onMouseLeave={startRotationHandler}
         ref={circumferenceRef}
-        className="relative h-2/3 aspect-square border-transparent border-4 rounded-full flex items-center justify-center origin-center transition-colors duration-500">
+        className="relative h-2/3 aspect-square border-transparent border-4 rounded-full flex items-center justify-center origin-center transition-colors duration-500 rotation"
+        style={{ animationDelay: "1s" }}
+      >
         <p
           ref={centerTextRef}
           className="text-lg rotation-reverse opacity-0 transition-opacity duration-700"

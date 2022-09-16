@@ -31,9 +31,7 @@ const Skill = (props) => {
                 </div>
                 <div className=" col-span-4 flex items-center justify-between px-6">
                     <p className="text-xl">Skill Level</p>
-                    <div className="w-5 h-5 aspect-square bg-white text-dark-primary text-center rounded cursor-pointer">-</div>
                     {getLevels(props.level)}
-                    <div className="w-5 h-5 aspect-square bg-white text-dark-primary text-center rounded cursor-pointer">+</div>
                 </div>
             </div>
     )
