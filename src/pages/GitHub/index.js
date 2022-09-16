@@ -8,24 +8,25 @@ import { getProjects } from '../../utilities/functions/utilityFunctions';
 
 const GitHub = () => {
 
-  const owners = [
-    {
-      type: 'orgs',
-      name: 'Camellia-Cultivar'
-    },
-    {
-      type: 'users',
-      name: 'fmart8421',
-    },
-    {
-      type: 'orgs',
-      name: 'GroNowICM'
-    }
-  ];
+  
 
   const [projects, setProjects] = useState([]);
 
   useEffect(() => {
+    const owners = [
+      {
+        type: 'orgs',
+        name: 'Camellia-Cultivar'
+      },
+      {
+        type: 'users',
+        name: 'fmart8421',
+      },
+      {
+        type: 'orgs',
+        name: 'GroNowICM'
+      }
+    ];
     const fetchData = async () => {
       let _projects = [];
       for (const owner of owners) {
