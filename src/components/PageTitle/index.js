@@ -15,7 +15,7 @@ const PageTitle = (props) => {
             :
             setReturningComponent(<RegularTitle className={className} title={props.title} ></RegularTitle>)
 
-    }, [props.title])
+    }, [props.title, className])
 
     return returningComponent;
 }
