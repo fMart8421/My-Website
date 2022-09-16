@@ -33,7 +33,7 @@ export const hobbies = [
         rarity:"Common",
         power:"Health Regen",
         itemType:"Skill",
-        description:"I love the feeling of being physically tired after a good game, run or workout, especially if it is with friends! My favorite sport is, without a doubt, volleyball. It started as hate tho. In middle school I used to hate volleyball first because I sucked, second because everyone else sucked. The game would end before it even started. Then, in highschool things changed. The ball wouldn't fall instantly and everything started being more fun and I wasn't half bad after some little practice. In college I joined the EI team in what was called \"Taça UA\", and started liking the sport even more! Now I don't have anyone to play it with tho, so I'm rather sad."
+        description:"I love the feeling of being physically tired after a good game, run, or workout, especially if it is with friends! My favorite sport is, without a doubt, volleyball. It started as hate tho. In middle school, I used to hate volleyball first because I sucked, second because everyone else sucked. The game would end before it even started. Then, in high school, things changed. The ball wouldn't fall instantly and everything started being more fun and I wasn't half bad after some little practice. In college, I joined the EI team in what was called \"Taça UA\", and started liking the sport even more! Now I don't have anyone to play it with tho, so I'm rather sad."
     },
     {
         name:"Watching Sunsets",
