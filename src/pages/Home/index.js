@@ -35,6 +35,7 @@ const Home = () => {
     });
 
     setRoundedTopics(_topics);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [circumferenceRef.current]) //this has a warning but here we want the effect to run whenever the ref does change
 
   /*

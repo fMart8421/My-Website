@@ -6,7 +6,7 @@ import { hobbies } from "./hobbies.js";
 
 const Hobbies = () => {
 
-    const [itemNumber, setItemNumber] = useState(hobbies.length);
+    const [itemNumber, ] = useState(hobbies.length);
     const [openedItem, setOpenedItem] = useState(<></>)
 
     const loadItem = (_item) => {

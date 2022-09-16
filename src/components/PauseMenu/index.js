@@ -9,7 +9,18 @@ const PauseMenu = (props) => {
     const [currentItems, setCurrentItems] = useState("pauseMenu");
     const [items, setItems] = useState(<></>)
 
+
+
     useEffect(() => {
+        const getPages = () =>{
+            let _pages = [];
+            for (const _page of Object.keys(props.pages)) {
+                if(_page !== props.currentPage && _page !== "/about"){
+                    _pages.push({path:_page, title:props.pages[_page]})
+                }
+            }
+            return _pages;
+        }
         switch (currentItems) {
             case "pauseMenu":
                 setMenuTitle("Pause Menu");
@@ -23,17 +34,9 @@ const PauseMenu = (props) => {
             default:
                 break;
         }
-    }, [currentItems]);
+    }, [currentItems, props.dismiss, props.navigate, props.currentPage, props.pages]);
 
-    const getPages = () =>{
-        let _pages = [];
-        for (const _page of Object.keys(props.pages)) {
-            if(_page !== props.currentPage && _page !== "/about"){
-                _pages.push({path:_page, title:props.pages[_page]})
-            }
-        }
-        return _pages;
-    }
+    
 
     const closeMenu = () => {
         setMenuTitle("Pause Menu");
