@@ -1,19 +1,16 @@
 import React from 'react'
 
 import { skillLevels } from "./skills.js";
-import store from "../../redux/store/store";
 
 import Skill from '../../components/Skill/index.js';
 import Menu from '../../components/Menu/index.js';
 
 const Skills = () => {
 
-    const skillsWidth = store.getState().headerWidth;
 
     return (
         <div className="container my-8 flex justify-center fade-in ">
-            <Menu className="relative flex flex-col "
-                style={{ width: `${skillsWidth}px` }}
+            <Menu className="relative flex flex-col w-3/4"
                 title="Skill List" 
                 menuIcon="/svg/skills/skill-icon.svg"
             >

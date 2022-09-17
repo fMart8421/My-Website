@@ -42,7 +42,7 @@ const Welcome = () => {
                     <img 
                     id="expandingImage"
                     className="h-[250px] w-[250px] rounded-full" 
-                    src="https://cdn.discordapp.com/attachments/835904110137442335/1009899105260154980/Fabio_2.jpg"
+                    src="/images/Fabio_750.jpg"
                     alt="Young Male"></img>
                     <div className="text-4xl mt-4 flex">
                         <p className="text-bounce mr-1" style={{ animationDelay: ".s" }}>C</p>

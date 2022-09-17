@@ -8,14 +8,13 @@ const Contacts = () => {
 
   const [sentence, setSentence] = useState("");
   const contactSentence = "You want to contact me? Here's how!"
-  const sentenceCharacters = [...contactSentence];
-  const charNumber = sentenceCharacters.length;
+  const charNumber = contactSentence.length;
   const baseDelay = 75;
 
   useEffect(() => {
     const createSentence = async () => {
       let _sentence = "";
-      for (const character of sentenceCharacters) {
+      for (const character of contactSentence) {
         _sentence = _sentence + character;
         setSentence(_sentence);
         await sleep(baseDelay);

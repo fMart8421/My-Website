@@ -1,0 +1,92 @@
+.stop-base {
+    transform:translate(-50%, 50%) rotateX(70deg) ;
+}
+.stop-post-shadow {
+    width: 0;
+    height: 0;
+    border-top-width: 100px;
+    border-bottom-width: 100px;
+    border-right-width: 20px;
+    border-left-width: 20px;
+    border-top-color: rgba(17, 17, 17, 0.4);
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+    border-right-color: transparent;
+    transform: rotateX(70deg) rotateZ(20deg);
+}
+.stop-post {
+    border-top-width: 50px;
+    border-bottom-width: 0px;
+    border-left-width: 15px;
+    border-right-width: 15px;
+    border-top-color: white;
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+    border-right-color: transparent;
+}
+
+.group:hover  .bouncing-stop{
+    animation:bouncing-stop 1.5s linear infinite;
+}
+
+.group:hover .bouncing-stop-shadow{
+    animation:bouncing-stop-shadow 1.5s linear infinite;
+}
+
+@keyframes bouncing-stop {
+    10% {
+        scale: 1.2 0.8;
+    }
+    15% {
+        scale: 1.1 0.9;
+    }
+    17% {
+        scale: 1;
+        translate: 0 -10%;
+    }
+    35% {
+        scale: 1;
+        translate: 0 -40%;
+    }
+    70%{
+        scale: 1.1 0.9;
+        translate: 0;
+    }
+    75% {
+        scale: 1;
+        translate: 0;
+    }
+    100% {
+        scale: 1;
+        translate: 0;
+    }
+}
+
+@keyframes bouncing-stop-shadow {
+    10% {
+        scale: 1.2 0.8;
+    }
+    15% {
+        scale: 1.1 0.9;
+    }
+    17% {
+        scale: 1;
+        translate: 10% -2.5%;
+    }
+    35% {
+        scale: 1;
+        translate: 40% -10%;
+    }
+    70%{
+        scale: 1.1 0.9;
+        translate: 0;
+    }
+    75% {
+        scale: 1;
+        translate: 0;
+    }
+    100% {
+        scale: 1;
+        translate: 0;
+    }
+}
