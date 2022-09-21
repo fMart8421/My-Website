@@ -1,4 +1,4 @@
-import React, {useEffect, useState, useLayoutEffect, Suspense} from 'react';
+import React, {useEffect, useState, Suspense} from 'react';
 import { Route, Routes, useLocation } from 'react-router-dom';
 
 import Header from './components/Header';
