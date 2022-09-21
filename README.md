@@ -5,3 +5,8 @@ Hello! I'm Fábio Martins, and this is my personal website's source code! The pr
 The website was deployed with **Firebase**!
 
 Don't forget to actually visit my website!
+
+
+### Small note
+
+The website is currently under remodelation, since some of the pages don't work well on mobile (like the /path), I am currently working on a new design for it. Also, the homepage on mobile/tablet devices is a temporary one, I am also remodeling that.
