@@ -3,7 +3,7 @@ import { closeMenu } from '../../utilities/functions/utilityFunctions'
 
 const ChangePageItems = (props) => {
     return (
-        <div id="changePageMenu" className="w-2/3 flex flex-col text-center md:text-lg lg:text-3xl self-center bg-dark-primary border-2 border-t-0 rounded-b-md origin-top open-scroll">
+        <div id="changePageMenu" className="w-2/3 flex flex-col text-center md:text-lg lg:text-3xl self-center bg-dark-primary border-2 border-t-0 rounded-b-md origin-top open-scroll overflow-y-scroll">
             {props.pageList.map((page, index) => {
                 return (
                     <p key={index} onClick={() => { closeMenu("changePageMenu", "close-scroll",1000, props.navigate, page.path)}} className="py-4 hover:bg-white hover:text-dark-primary">

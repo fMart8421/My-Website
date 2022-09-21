@@ -2,7 +2,7 @@ import React from 'react'
 
 const Hamburguer = (props) => {
 
-  const className="cursor pointer "+props.className
+  const className="cursor-pointer "+props.className
 
   return (
     <div 
