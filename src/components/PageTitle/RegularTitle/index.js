@@ -5,7 +5,7 @@ const RegularTitle = (props) => {
     <div
             className={props.className}
         >
-            <p className="text-3xl font-semibold pt-4 pb-4">{props.title}</p>
+            <p className="md:text-3xl text-xl font-semibold md:py-4 py-2">{props.title}</p>
         </div>
   )
 }

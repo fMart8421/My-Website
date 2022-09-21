@@ -8,7 +8,7 @@ const PauseMenuItems = (props) => {
     return (
         <div 
         id="menu"
-        className="open-scroll origin-top w-2/3 flex flex-col text-center text-3xl self-center bg-dark-primary border-b-2 border-r-2 border-l-2 rounded-b-md transition overflow-hidden">
+        className="open-scroll origin-top w-2/3 flex flex-col text-center md:text-xl lg:text-3xl self-center bg-dark-primary border-b-2 border-r-2 border-l-2 rounded-b-md transition overflow-y-scroll scroll-p-0 scroll-m-0">
             <p
                 onClick={()=>{closeMenu("menu","close-scroll",1000,props.dismiss)}}
                 className="py-4 border-b-2 border-dark-primary hover:text-dark-primary hover:bg-white"
