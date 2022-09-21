@@ -30,18 +30,19 @@ const Path = () => {
   }
 
   return (
-    <section className="container mt-16 grid grid-cols-11 justify-items-center place-items-center gap-y-2 fade-in">
+    <section className="px-[10%] flex-grow flex-shrink basis-0 mt-16 grid grid-cols-11 justify-items-center place-items-center gap-y-2 fade-in">
       {openLocation}
       <div className="max-w-min">
-        <div className="bg-white aspect-square h-12 rounded-full"></div>
-        <p className="text-center mt-2 text-lg">Start</p>
+        <div className="bg-white aspect-square h-6 md:h-12 rounded-full"></div>
+        <p className="text-center mt-2 text-sm md:text-lg">Start</p>
       </div>
       {paths.map((_path) => {
         return (
           <Fragment key={_path.id}>
             <DashedPath
               className={_path.pathDetails.svgClassName}
-              width="95%"
+              width="100%"
+              height="100%"
               viewWidth={_path.pathDetails.viewWidth}
               viewHeight={_path.pathDetails.viewHeight}
             >

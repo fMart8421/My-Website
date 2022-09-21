@@ -10,8 +10,8 @@ const SpecialTitle = (props) => {
       className={className}
       onClick={() => { openWindow("github") }}
     >
-      <p className="text-3xl font-semibold pt-2 pb-1">{props.title}</p>
-      <p className="text-xl font-medium pt-1 pb-2">{props.subtitle}</p>
+      <p className="md:text-3xl text-xl font-semibold pt-1 pb-0.5 md:pt-2 md:pb-1 ">{props.title}</p>
+      <p className="md:text-xl font-medium pt-0.5 pb-1 md:pt-1 md:pb-2">{props.subtitle}</p>
     </div>
   )
 }

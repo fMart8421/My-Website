@@ -19,32 +19,35 @@ const HobbyItem = (props) => {
     }
 
     return (
-        <div ref={itemRef} className="absolute top-0 left-0 w-full h-full bg-black/90 flex items-center justify-center fade-in">
+        <div ref={itemRef} className="fixed top-0 left-0 w-full h-full flex items-center justify-center fade-in">
             <div 
-            className="h-2/3 w-2/5 bg-dark-primary rounded-md flex flex-col fade-in"
+            onClick={closeItem}
+            className="fixed top-0 left-0 w-full h-full bg-black/90"></div>
+            <div 
+            className="w-4/5 h-1/2 lg:w-3/5 lg:h-3/5  xl:h-2/3 xl:w-2/5 bg-dark-primary rounded-md flex flex-col fade-in"
             style={{animationDelay: `200ms`}}
             >
                 <div className="relative border-b-2 border-white/30">
-                    <p className="text-center text-4xl py-2">{props.hobby.name}</p>
+                    <p className="text-center text-2xl lg:text-4xl py-2">{props.hobby.name}</p>
                     <img
                         alt="Close Icon"
-                        className="absolute right-6 top-1/2 -translate-y-1/2 h-8 cursor-pointer"
+                        className="absolute right-6 top-1/2 -translate-y-1/2 h-4 lg:h-8 cursor-pointer"
                         src="/svg/close-icon.svg"
                         onClick={closeItem}
                     ></img>
                 </div>
                 <div className="container relative overflow-y-scroll">
-                    <div className="flex mt-8">
-                        <img className="border-2 border-white p-4 rounded w-[35%]" alt="" src={props.hobby.whiteIcon}></img>
-                        <div className="flex flex-col justify-between ml-8">
-                            <p className="text-lg" style={{ color: `${rarityColors[props.hobby.rarity]}` }}><span className="text-white underline text-2xl font-medium mr-2">Rarity:</span> {props.hobby.rarity}</p>
-                            <p className="text-lg"><span className="text-white underline text-2xl font-medium mr-2">Item Type:</span> {props.hobby.itemType}</p>
-                            <p className="text-lg"><span className="text-white underline text-2xl font-medium mr-2">Power:</span> {props.hobby.power}</p>
+                    <div className="flex flex-col md:flex-row mt-8">
+                        <img className="border-2 border-white p-4 self-center rounded h-[100px] md:w-[35%]" alt="" src={props.hobby.whiteIcon}></img>
+                        <div className="flex flex-col justify-between md:ml-8 md:mt-0 mt-8">
+                            <p className="md:text-xl my-1 md:my-0" style={{ color: `${rarityColors[props.hobby.rarity]}` }}><span className="text-white underline text-xl md:text-2xl font-medium mr-2">Rarity:</span> {props.hobby.rarity}</p>
+                            <p className="md:text-xl my-1 md:my-0"><span className="text-white underline text-xl md:text-2xl font-medium mr-1 lg:mr-2">Item Type:</span> {props.hobby.itemType}</p>
+                            <p className="md:text-xl my-1 md:my-0"><span className="text-white underline text-xl md:text-2xl font-medium mr-1 lg:mr-2">Power:</span> {props.hobby.power}</p>
                         </div>
                     </div>
                     <div className="my-8">
-                        <p className="underline text-2xl font-medium">Description:</p>
-                        <p className="text-justify text-lg mt-4">{props.hobby.description}</p>
+                        <p className="underline text-xl md:text-2xl font-medium">Description:</p>
+                        <p className="text-justify md:text-lg mt-4">{props.hobby.description}</p>
                     </div>
                 </div>
 

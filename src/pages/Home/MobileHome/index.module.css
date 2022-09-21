@@ -1,0 +1,16 @@
+
+
+.slide-down{
+    max-height: 0px;
+    animation:slide-down 1s ease-out forwards;
+}
+
+
+@keyframes slide-down {
+    from{
+        max-height: 0px;
+    }
+    to {
+        max-height:100vh;
+    }
+}

@@ -30,11 +30,11 @@ const Contacts = () => {
 
 
   return (
-    <div className="container mb-6 grid grid-cols-2">
-      <div className="flex items-center w-3/4">
-        <p className="text-6xl text-justify">{sentence}<span className="ml-2 typewriter"></span></p>
+    <div className="flex-grow flex-shrink basis-0 px-[10%] my-8 grid lg:grid-cols-2 justify-items-center lg:items-center">
+      <div className="flex items-center lg:w-3/4">
+        <p className=" text-2xl md:text-6xl text-justify">{sentence}<span className="ml-2 typewriter"></span></p>
       </div>
-      <div className="flex flex-col gap-16 mt-16">
+      <div className="flex flex-col gap-16 mt-10 lg:mt-0">
         <Contact
           style={getDelay(0)}
           onClick={() => { openWindow("email") }}
@@ -42,7 +42,7 @@ const Contacts = () => {
           image={"/svg/contacts/email.svg"}
           hoverContent="fabio.martins.work@gmail.com"
         >
-          <p className="text-3xl ml-8">Send me an <span className="text-purple-500">email</span> ...</p>
+          <p className="text-lg md:text-3xl ml-8">Send me an <span className="text-purple-500">email</span> ...</p>
         </Contact>
         <Contact
           style={getDelay(1)}
@@ -51,7 +51,7 @@ const Contacts = () => {
           image={"/svg/contacts/linkedin.svg"}
           hoverContent="Fábio Martins"
         >
-          <p className="text-3xl ml-8"><span className="text-purple-500">Connect</span> with me ...</p>
+          <p className="text-lg md:text-3xl ml-8"><span className="text-purple-500">Connect</span> with me ...</p>
         </Contact>
         <Contact
           style={getDelay(2)}
@@ -59,7 +59,7 @@ const Contacts = () => {
           alt="Instagram"
           image={"/svg/contacts/instagram.svg"}
           hoverContent="fabio_mart0">
-          <p className="text-3xl ml-8">Or <span className="text-purple-500">stalk</span> me if you wish</p>
+          <p className="text-lg md:text-3xl ml-8">Or <span className="text-purple-500">stalk</span> me if you wish</p>
         </Contact>
       </div>
 
