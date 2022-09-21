@@ -89,7 +89,7 @@ code {
 }
 
 @media (max-width:768px) {
-  .slider{
+  .md-slider{
     transform-origin:top;
     animation:slide-up 0.8s linear forwards;
   }
