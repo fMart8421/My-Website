@@ -46,7 +46,7 @@ export const paths = [
         pathDetails:{
             id:"path3_dashedPath",
             path:<path d="M2.5 180C2.5 144.5 206 -14.5 651.5 64.5C974 147.5 1322 48.5 1298 2" stroke="white" strokeWidth="4" strokeLinecap="round"/>,
-            svgClassName:`col-span-11 pb-4 px-8 ${styles["continuous-offset-reverse"]}`,
+            svgClassName:`col-span-11 lg:pb-4 xl:pb-0 2xl:-my-4 lg:px-8 ${styles["continuous-offset-reverse"]}`,
             viewWidth:"1302",
             viewHeight:"182"
         }

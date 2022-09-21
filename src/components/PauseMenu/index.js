@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { closeMenu } from '../../utilities/functions/utilityFunctions';
 import ChangePageItems from '../ChangePageItems';
 import PauseMenuItems from '../PauseMenuItems';
 import PauseMenuTitle from '../PauseMenuTitle'
@@ -38,18 +39,15 @@ const PauseMenu = (props) => {
 
     
 
-    const closeMenu = () => {
-        setMenuTitle("Pause Menu");
-        props.dismiss();
-    }
+    
 
     return (
-        <div className="absolute top-0 left-0 h-full w-full z-10"
+        <div className="fixed top-0 left-0 h-full w-full z-10"
         >
-            <div className="absolute top-0 left-0 bg-black/90 h-full w-full" onClick={closeMenu}>
+            <div className="absolute top-0 left-0 bg-black/90 h-full w-full" onClick={()=>{closeMenu("menu","close-scroll",1000,props.dismiss)}}>
             </div>
             <div
-                className="w-1/2 h-2/3 rounded-md absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col justify-center"
+                className="lg:w-1/2 lg:h-2/3 w-3/4 rounded-md absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col justify-center"
             >
                 <div className="relative">
                     <PauseMenuTitle title={menuTitle} />
