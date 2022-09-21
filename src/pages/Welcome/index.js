@@ -9,9 +9,9 @@ const Welcome = () => {
     const navigate = useNavigate();
 
     const triggerChangePageAnimation = async () => {
-        document.getElementById("welcomePage_greySide").classList.add("slider");
+        document.getElementById("welcomePage_greySide").classList.add("slider", "md-slider");
         await sleep(800);
-        document.getElementById("welcomePage").classList.add("slider");
+        document.getElementById("welcomePage").classList.add("slider", "md-slider");
         await sleep(800);
         navigate("/home");
     }
