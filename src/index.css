@@ -88,7 +88,7 @@ code {
   animation:slide-left 0.8s linear forwards;
 }
 
-@media (min-width:768px) {
+@media (max-width:768px) {
   .slider{
     transform-origin:top;
     animation:slide-up 0.8s linear forwards;
@@ -274,7 +274,7 @@ code {
     translate:-100% 0px;
   }
 }
-@keyframes slide-left {
+@keyframes slide-up {
   0%{
     z-index:-10;
   }
