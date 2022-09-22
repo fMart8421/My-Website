@@ -8,24 +8,25 @@ import { getProjects } from '../../utilities/functions/utilityFunctions';
 
 const GitHub = () => {
 
-  const owners = [
-    {
-      type: 'orgs',
-      name: 'Camellia-Cultivar'
-    },
-    {
-      type: 'users',
-      name: 'fmart8421',
-    },
-    {
-      type: 'orgs',
-      name: 'GroNowICM'
-    }
-  ];
+  
 
   const [projects, setProjects] = useState([]);
 
   useEffect(() => {
+    const owners = [
+      {
+        type: 'orgs',
+        name: 'Camellia-Cultivar'
+      },
+      {
+        type: 'users',
+        name: 'fmart8421',
+      },
+      {
+        type: 'orgs',
+        name: 'GroNowICM'
+      }
+    ];
     const fetchData = async () => {
       let _projects = [];
       for (const owner of owners) {
@@ -51,9 +52,7 @@ const GitHub = () => {
   
 
   return (
-    <div className="justify-self-center pb-4">
-
-      <div className="container grid grid-cols-3 gap-16 mt-16">
+      <div className="flex-grow flex-shrink basis-0 px-[10%] grid md:grid-cols-2 lg:grid-cols-3 gap-y-10 md:gap-16 mt-16 mb-6">
         {projects.map((project, index) => {
           return (
             <GithubProject 
@@ -66,9 +65,7 @@ const GitHub = () => {
             ></GithubProject>
           )
         })}
-
       </div>
-    </div>
   )
 }
 

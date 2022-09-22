@@ -9,9 +9,9 @@ const Welcome = () => {
     const navigate = useNavigate();
 
     const triggerChangePageAnimation = async () => {
-        document.getElementById("welcomePage_greySide").classList.add("width-shrink");
+        document.getElementById("welcomePage_greySide").classList.add("slider", "md-slider");
         await sleep(800);
-        document.getElementById("welcomePage").classList.add("width-shrink");
+        document.getElementById("welcomePage").classList.add("slider", "md-slider");
         await sleep(800);
         navigate("/home");
     }
@@ -20,31 +20,31 @@ const Welcome = () => {
     return (
         <div 
         id="welcomePage"
-        className="grid grid-cols-5 flex-grow transition "
+        className="grid grid-cols-5 flex-grow flex-shrink basis-0 transition items-center"
         >
             <div 
             id="welcomePage_blackSide"
-            className=" col-span-2 flex flex-col bg-black pt-36 pl-[15%] pr-[15%]"
+            className=" col-span-5 lg:col-span-2 flex flex-col justify-center items-center bg-black h-full lg:px-[15%] py-4 lg:py-0"
             >
-                <p className="text-[4rem]">Hello there!</p>
-                <p className="text-[4rem] mt-4">I am</p>
-                <Name className="text-[5rem] pt-14 ml-16 bg-black grid grid-cols-1 transition" />
+                <p className="lg:text-[4rem] md:text-5xl text-2xl">Hello there!</p>
+                <p className="lg:text-[4rem] md:text-5xl text-2xl mt-2 lg:mt-4">I am</p>
+                <Name className="lg:text-[5rem] md:text-5xl text-3xl pt-6 lg:pt-14 lg:ml-16 bg-black grid grid-cols-2 lg:grid-cols-1 transition" />
             </div>
             <div 
             id="welcomePage_greySide"
-            className="col-span-3 pt-32 pl-[15%] pr-[15%] flex flex-col"
+            className="lg:col-span-3 py-4 lg:py-0 col-span-5 px-[15%] flex flex-col"
             >
-                <p className="text-[3rem]">Are you here to learn more about me? Well then...</p>
+                <p className="lg:text-[3rem] md:text-4xl text-xl text-center">Are you here to learn more about me? Well then...</p>
                 <div
                     className="self-center flex flex-col items-center mt-16 max-w-max cursor-pointer"
                     onClick={triggerChangePageAnimation}
                 >
                     <img 
                     id="expandingImage"
-                    className="h-[250px] w-[250px] rounded-full" 
+                    className="h-[150px] md:h-[200px] lg:h-[250px] rounded-full" 
                     src="/images/Fabio_750.jpg"
                     alt="Young Male"></img>
-                    <div className="text-4xl mt-4 flex">
+                    <div className="lg:text-4xl md:text-3xl text-2xl mt-4 flex">
                         <p className="text-bounce mr-1" style={{ animationDelay: ".s" }}>C</p>
                         <p className="text-bounce mr-1" style={{ animationDelay: ".1s" }}>l</p>
                         <p className="text-bounce mr-1" style={{ animationDelay: ".2s" }}>i</p>

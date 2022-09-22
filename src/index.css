@@ -83,9 +83,16 @@ code {
   animation: blurr-fade-out 1s linear forwards;
 }
 
-.width-shrink{
+.slider{
   transform-origin:left;
-  animation:width-shrink 0.8s linear forwards;
+  animation:slide-left 0.8s linear forwards;
+}
+
+@media (max-width:768px) {
+  .md-slider{
+    transform-origin:top;
+    animation:slide-up 0.8s linear forwards;
+  }
 }
 
 /* 
@@ -258,13 +265,22 @@ code {
   }
 }
 
-@keyframes width-shrink {
+@keyframes slide-left {
   0%{
     z-index:-10;
   }
   100%{
     z-index:-10;
     translate:-100% 0px;
+  }
+}
+@keyframes slide-up {
+  0%{
+    z-index:-10;
+  }
+  100%{
+    z-index:-10;
+    translate:0px -100%;
   }
 }
 

@@ -33,6 +33,32 @@
     animation:bouncing-stop-shadow 1.5s linear infinite;
 }
 
+@media (max-width:768px) {
+    .stop-post-shadow {
+        width: 0;
+        height: 0;
+        border-top-width: 50px;
+        border-bottom-width: 50px;
+        border-right-width: 10px;
+        border-left-width: 10px;
+        border-top-color: rgba(17, 17, 17, 0.4);
+        border-bottom-color: transparent;
+        border-left-color: transparent;
+        border-right-color: transparent;
+        transform: rotateX(70deg) rotateZ(20deg);
+    }
+    .stop-post {
+        border-top-width: 25px;
+        border-bottom-width: 0px;
+        border-left-width: 7.5px;
+        border-right-width: 7.5px;
+        border-top-color: white;
+        border-bottom-color: transparent;
+        border-left-color: transparent;
+        border-right-color: transparent;
+    }  
+}
+
 @keyframes bouncing-stop {
     10% {
         scale: 1.2 0.8;

@@ -1,5 +1,5 @@
-import React, { useLayoutEffect, useRef, useEffect, useState } from 'react';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import React, {  useRef, useEffect, useState } from 'react';
+import {  useLocation, useNavigate } from 'react-router-dom';
 import Hamburguer from '../Hamburguer';
 
 
@@ -36,14 +36,14 @@ const Header = (props) => {
   }
 
   return (
-    <div className="self-center w-3/5 flex flex-col">
+    <div className="self-center w-full lg:w-3/5 flex flex-col">
       <header
         ref={headerRef}
-        className="relative bg-dark-primary shadow-md shadow-white/10 flex flex-col items-center pb-4 fade-in"
+        className="relative bg-dark-primary shadow-md shadow-white/10 flex justify-center items-center fade-in px-2 sm:px-[10%]"
 
       >
-        {showHamburger && <Hamburguer onClick={()=>setOpenMenu(true)}></Hamburguer>}
-          <Name className=" text-[4.5rem] grid grid-cols-2" />
+        {showHamburger && <Hamburguer className="absolute top-1/2 left-4 sm:left-8 md:left-[5%] -translate-y-1/2" onClick={()=>setOpenMenu(true)}></Hamburguer>}
+          <Name className="py-2 text-[2.5rem] md:text-[4.5rem] sm:grid sm:grid-cols-2 justify-center items-center" />
       </header>
         {props.title !== "/home" && <PageTitle className="self-center" title={titles[props.title]}></PageTitle>}
         {openMenu && <PauseMenu currentPage={props.title} pages={titles} dismiss={()=>setOpenMenu(false)} navigate={navigateTo}></PauseMenu>}

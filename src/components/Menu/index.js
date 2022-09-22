@@ -3,7 +3,7 @@ import MenuTitle from '../MenuTitle'
 
 const Menu = (props) => {
 
-    const className= "h-[500px] border-4 rounded-md border-white " + props.className
+    const className= " border-4 rounded-md border-white " + props.className
 
     return (
         <div className={className}
