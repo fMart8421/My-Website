@@ -21,13 +21,15 @@ const About = React.lazy(()=> import('./pages/About'))
 function App() {
   const [hideHeader, setHideHeader] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
-  const [isMobile, setIsMobile] = useState(window.innerWidth < 1280);
+  const [isNotPC, setIsNotPC] = useState(window.innerWidth < 1280);
+  const [isNotMobile, setIsNotMobile] = useState(window.innerWidth >= 1024);
 
   const location = useLocation();
 
   useEffect(()=> {
     const windowResizeHandler = () => {
-      setIsMobile(window.innerWidth < 1280 )
+      setIsNotMobile(window.innerWidth > 1024 )
+      setIsNotPC(window.innerWidth < 1280 )
     }
     window.addEventListener("resize", windowResizeHandler)
   },[])
@@ -46,14 +48,9 @@ function App() {
   }, [location]);
 
   const getPage = (_pagePath) => {
-    switch (_pagePath) {
-      case "/home":
-        return isMobile ? <MobileHome></MobileHome> : <Home></Home>
-      case "path":
-        return isMobile ? <></> : <Path></Path>
-      default:
-        return <></>
-    }
+      if(_pagePath === "/home"){
+        return isNotPC ? <MobileHome></MobileHome> : <Home></Home>
+      }
   }
 
   return (
@@ -67,7 +64,7 @@ function App() {
         <Route exact path="/contacts" element={isLoading? <Loading/>:<Contacts></Contacts>} />
         <Route exact path="/skills" element={isLoading? <Loading/>:<Skills></Skills>} />
         <Route exact path="/hobbies" element={isLoading? <Loading/>:<Hobbies></Hobbies>} />
-        <Route exact path="/path" element={isLoading? <Loading/>:<Path></Path>} />
+        <Route exact path="/path" element={isLoading? <Loading/>:<Path isNotMobile={isNotMobile}></Path>} />
         <Route exact path="/about" element={isLoading? <Loading/>:<About></About>} />
       </Routes>
       </Suspense>
