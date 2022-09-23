@@ -20,9 +20,9 @@ const MobileHome = () => {
     return topics.map((_, index) => {
       let className = "";
       if (index === currentIndex) {
-        className = "aspect-square h-2 bg-white first:mt-0 last:mb-0 my-6 rounded-full "
+        className = "aspect-square h-2 md:h-4 bg-white first:mt-0 last:mb-0 my-6 rounded-full "
       } else {
-        className = "aspect-square h-2 bg-white/50 first:mt-0 last:mb-0 my-6 rounded-full "
+        className = "aspect-square h-2 md:h-4 bg-white/50 first:mt-0 last:mb-0 my-6 rounded-full "
       }
       return (
         <div key={`selector-${index}`} className={className}>
@@ -45,17 +45,17 @@ const MobileHome = () => {
       [
         <Link
           ref={previousRef}
-          className={`bg-white rounded-md text-dark-primary text-center w-3/4 py-8 ${styles["previous-item"]} ${styles["rotate-previous-in"]}`}
+          className={`bg-white rounded-md text-dark-primary text-center md:text-2xl w-3/4 py-8 md:py-14 ${styles["previous-item"]} ${styles["rotate-previous-in"]}`}
           key={topics[topics.length - 1].id}
           to={topics[topics.length - 1].path}>{topics[topics.length - 1].name}</Link>,
         <Link
           ref={mainRef}
-          className={`bg-white rounded-md text-dark-primary text-center w-3/4 py-8 ${styles["fade-in"]}`}
+          className={`bg-white rounded-md text-dark-primary text-center md:text-2xl w-3/4 py-8 md:py-14 ${styles["fade-in"]}`}
           key={topics[0].id}
           to={topics[0].path}>{topics[0].name}</Link>,
         <Link
           ref={nextRef}
-          className={`bg-white rounded-md text-dark-primary text-center w-3/4 py-8 ${styles["next-item"]} ${styles["rotate-next-in"]}`}
+          className={`bg-white rounded-md text-dark-primary text-center md:text-2xl w-3/4 py-8 md:py-14 ${styles["next-item"]} ${styles["rotate-next-in"]}`}
           key={topics[1].id}
           to={topics[1].path}>{topics[1].name}</Link>,
       ]
@@ -119,17 +119,17 @@ const MobileHome = () => {
         [
           <Link
             ref={previousRef}
-            className={`bg-white rounded-md text-dark-primary text-center w-3/4 py-8 ${styles["previous-item"]} ${styles["rotate-previous-in"]}`}
+            className={`bg-white rounded-md text-dark-primary text-center md:text-2xl w-3/4 py-8 md:py-14 ${styles["previous-item"]} ${styles["rotate-previous-in"]}`}
             key={topics[previousCard].id}
             to={topics[previousCard].path}>{topics[previousCard].name}</Link>,
           <Link
             ref={mainRef}
-            className={`bg-white rounded-md text-dark-primary text-center w-3/4 py-8`}
+            className={`bg-white rounded-md text-dark-primary text-center md:text-2xl w-3/4 py-8 md:py-14`}
             key={topics[currentCard].id}
             to={topics[currentCard].path}>{topics[currentCard].name}</Link>,
           <Link
             ref={nextRef}
-            className={`bg-white rounded-md text-dark-primary text-center w-3/4 py-8 ${styles["next-item"]}`}
+            className={`bg-white rounded-md text-dark-primary text-center md:text-2xl w-3/4 py-8 md:py-14 ${styles["next-item"]}`}
             key={topics[nextCard].id}
             to={topics[nextCard].path}>{topics[nextCard].name}</Link>,
         ]
@@ -139,17 +139,17 @@ const MobileHome = () => {
         [
           <Link
             ref={previousRef}
-            className={`bg-white rounded-md text-dark-primary text-center w-3/4 py-8 ${styles["previous-item"]}`}
+            className={`bg-white rounded-md text-dark-primary text-center md:text-2xl w-3/4 py-8 md:py-14 ${styles["previous-item"]}`}
             key={topics[previousCard].id}
             to={topics[previousCard].path}>{topics[previousCard].name}</Link>,
           <Link
             ref={mainRef}
-            className={`bg-white rounded-md text-dark-primary text-center w-3/4 py-8`}
+            className={`bg-white rounded-md text-dark-primary text-center md:text-2xl w-3/4 py-8 md:py-14`}
             key={topics[currentCard].id}
             to={topics[currentCard].path}>{topics[currentCard].name}</Link>,
           <Link
             ref={nextRef}
-            className={`bg-white rounded-md text-dark-primary text-center w-3/4 py-8 ${styles["next-item"]} ${styles["rotate-next-in"]}`}
+            className={`bg-white rounded-md text-dark-primary text-center md:text-2xl w-3/4 py-8 md:py-14 ${styles["next-item"]} ${styles["rotate-next-in"]}`}
             key={topics[nextCard].id}
             to={topics[nextCard].path}>{topics[nextCard].name}</Link>,
         ]
