@@ -9,4 +9,4 @@ Don't forget to actually visit my website!
 
 ### Small note
 
-The website is currently under remodelation, since some of the pages don't work well on mobile (like the /path), I am currently working on a new design for it. Also, the homepage on mobile/tablet devices is a temporary one, I am also remodeling that.
+The home page is being evaluated, since it has a visual bug on PC and mobile. The initial page also has a small bug, where the animation is not triggered.
