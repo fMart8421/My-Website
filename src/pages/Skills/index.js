@@ -1,13 +1,13 @@
 import React from 'react'
 
-import { skillLevels } from "./skills.js";
+import { skillArray } from "./skills.js";
 
 import Skill from '../../components/Skill/index.js';
 import Menu from '../../components/Menu/index.js';
 
 const Skills = () => {
 
-
+    skillArray.sort((skill1, skill2)=> skill2.level-skill1.level)
     return (
         <div className=" flex-grow flex-shrink basis-0 px-[10%] my-8 flex justify-center items-center fade-in ">
             <Menu className="relative flex flex-col h-[400px] md:h-[500px] 2xl:h-[600px]"
@@ -16,7 +16,7 @@ const Skills = () => {
             >
                 <div className="overflow-y-scroll ">
                     {
-                        skillLevels.map((_skill, _index) =>{
+                        skillArray.map((_skill, _index) =>{
                             return(
                                 <Skill key={_skill.id} skill={_skill.name} level={_skill.level} icon={_skill.icon}></Skill>
                             )
