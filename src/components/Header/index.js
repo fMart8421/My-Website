@@ -21,12 +21,12 @@ const Header = (props) => {
   const navigate = useNavigate();
   const location = useLocation();
   const headerRef = useRef(null);
-  const [showHamburger, setShowHamburger] = useState(false);
+  const [isHome, setIsHome] = useState(false);
   const [openMenu, setOpenMenu] = useState(false);
 
 
   useEffect(() => {
-    setShowHamburger(location.pathname!=="/home");
+    setIsHome(location.pathname==="/home");
   }, [location]);
 
 
@@ -42,8 +42,8 @@ const Header = (props) => {
         className="relative bg-dark-primary shadow-md shadow-white/10 flex justify-center items-center fade-in px-2 sm:px-[10%]"
 
       >
-        {showHamburger && <Hamburguer className="absolute top-1/2 left-4 sm:left-8 md:left-[5%] -translate-y-1/2" onClick={()=>setOpenMenu(true)}></Hamburguer>}
-          <Name className="py-2 text-[2.5rem] md:text-[4.5rem] sm:grid sm:grid-cols-2 justify-center items-center" />
+        {!isHome && <Hamburguer className="absolute top-1/2 left-4 sm:left-8 md:left-[5%] -translate-y-1/2" onClick={()=>setOpenMenu(true)}></Hamburguer>}
+          <Name isDisabled={isHome} className="py-2 text-[2.5rem] md:text-[4.5rem] sm:grid sm:grid-cols-2 justify-center items-center" />
       </header>
         {props.title !== "/home" && <PageTitle className="self-center" title={titles[props.title]}></PageTitle>}
         {openMenu && <PauseMenu currentPage={props.title} pages={titles} dismiss={()=>setOpenMenu(false)} navigate={navigateTo}></PauseMenu>}
