@@ -1,4 +1,4 @@
-export const skillLevels = [
+export const skillArray = [
     {
         "id":1,
         "name":"ReactJs",
@@ -14,13 +14,13 @@ export const skillLevels = [
     {
         "id":3,
         "name":"Java",
-        "level": 4,
+        "level": 3,
         "icon": "/svg/skills/java-icon.svg"
     },
     {
         "id":4,
         "name":"JavaScript",
-        "level": 3,
+        "level": 4,
         "icon": "/svg/skills/javascript-icon.svg"
     },
     {
@@ -32,7 +32,7 @@ export const skillLevels = [
     {
         "id":6,
         "name":"CSS",
-        "level": 3,
+        "level": 4,
         "icon": "/svg/skills/css-icon.svg"
     },
     {
