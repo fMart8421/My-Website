@@ -28,7 +28,7 @@ const Welcome = () => {
             >
                 <p className="lg:text-[4rem] md:text-5xl text-2xl">Hello there!</p>
                 <p className="lg:text-[4rem] md:text-5xl text-2xl mt-2 lg:mt-4">I am</p>
-                <Name className="lg:text-[5rem] md:text-5xl text-3xl pt-6 lg:pt-14 lg:ml-16 bg-black grid grid-cols-2 lg:grid-cols-1 transition" />
+                <Name isDisabled={true} className="lg:text-[5rem] md:text-5xl text-3xl pt-6 lg:pt-14 lg:ml-16 bg-black grid grid-cols-2 lg:grid-cols-1 transition" />
             </div>
             <div 
             id="welcomePage_greySide"
