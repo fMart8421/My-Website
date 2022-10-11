@@ -80,7 +80,7 @@
         transform: rotateX(70deg) rotateZ(20deg);
     }
     .stop-post {
-        border-top-width: 37.5px;
+        border-top-width: 50px;
         border-bottom-width: 0px;
         border-left-width: 17.5px;
         border-right-width: 17.5px;
